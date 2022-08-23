@@ -50,7 +50,7 @@ import { PerpMarketInfo } from '@blockworks-foundation/mango-client'
 export const ENDPOINTS: EndpointInfo[] = [
   {
     name: 'mainnet',
-    url: process.env.NEXT_PUBLIC_ENDPOINT || 'https://mango.rpcpool.com',
+    url: process.env.NEXT_PUBLIC_ENDPOINT || 'https://solape.genesysgo.net/',
     websocket: process.env.NEXT_PUBLIC_ENDPOINT || 'https://mango.rpcpool.com',
     custom: false,
   },

@@ -168,7 +168,7 @@ button {
 }
 
 .solape-swap-stats h3 {
-  font-size: 20;
+  font-size: 22;
   font-weight: 400;
   color: #676767;
   margin-top: 32px;
@@ -177,7 +177,7 @@ button {
 
 .chart-stats {
   color: #fff;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 300;
 }
 
@@ -194,15 +194,32 @@ button {
   border-radius: 4px;
 }
 
-nav.solape {
-  background: linear-gradient(100.61deg, #090b0b, #1c2222);
+.solapenav {
+  background: linear-gradient(100.61deg, #090b0b 0%, #1c2222 100%);
 }
 
-.card {
-  background: "#1C2222";
-  box-shadow: "0px 0px 30px 5px rgba(0,0,0,0,.075)";
-  padding: 0;
-  color: "#fff";
+.sidenavstyle {
+  position: fixed;
+  height: calc(100% - 0px);
+  background: linear-gradient(100.61deg, #090b0b 0%, #1c2222 100%);
+  padding: 0px;
+  text-align: center;
+}
+
+nav.solape {
+  background: linear-gradient(100.61deg, #090b0b 0%, #1c2222 100%);
+}
+
+nav.solape a {
+  color: hsla(0, 0%, 100%, .85);
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: normal;
+}
+
+nav.solape a.active {
+  font-size: 16px;
+  color: rgb(255, 230, 204);
 }
 
 .swapcard {
@@ -215,6 +232,17 @@ border-radius: 100%;
 box-shadow: inset 0px 0px 0px 3px white;
 border: 1px solid #121616;
 
+}
+
+.helpbutton {
+
+padding: 5px 14px;
+background: #2E3838;
+border-radius: 6px;
+width: 140px;
+height: 30px;
+font-family:Inter;
+font-size: 8px
 
 }
 
@@ -233,7 +261,7 @@ border: 1px solid #121616;
 
 .react-grid-item.react-grid-placeholder {
   background: var(--bkg-1);
-  opacity: 90%;
+  opacity: 100%;
   border-radius: 8px;
   transition-duration: 100ms;
   z-index: 2;

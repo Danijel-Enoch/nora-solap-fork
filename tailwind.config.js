@@ -59,7 +59,7 @@ module.exports = {
           },
           red: { DEFAULT: '#DE0269', dark: '#A2024C', muted: '#9B0149', bright: '#FD499D' },
           green: { DEFAULT: '#0AD171', dark: '#08AF5F',  muted: '#067D43', bright: '#29F592' },
-          'bkg-1': '#090B0B',
+          'bkg-1': '#000',
           'bkg-2': '#121616',
           'bkg-3': '#1C2222',
           'bkg-4': '#38383D',
@@ -121,10 +121,6 @@ module.exports = {
       screens: {
         xl: '1600px',
       },
-      gridTemplateColumns: {
-
-        'footer': '200px minmax(900px, 1fr) 100px',
-      }
     },
   },
   // variants: {

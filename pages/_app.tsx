@@ -138,7 +138,7 @@ const PageTitle = () => {
 
   return (
     <Head>
-      <title>{marketTitleString}Solape</title>
+      <title>{marketTitleString}Solape DEX</title>
     </Head>
   )
 }
