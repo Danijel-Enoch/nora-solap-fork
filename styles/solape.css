@@ -1,0 +1,267 @@
+html,
+body {
+  background-color: var(--bkg-1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.solape__connect-btn {
+  background: transparent;
+  border: 2px solid #ff810a;
+  color: hsla(0, 0%, 100%, .85);
+  font-size: 16px;
+}
+
+.solape__connect-btn:hover {
+  color: #ff810a;
+}
+
+.solape__connect-btn span {
+  line-height: 23px;
+  font-weight: 300;
+}
+
+.solape__wallet-select-btn {
+  background: transparent;
+  border: 2px solid #ff810a;
+  color: #fff;
+  border-left: none;
+}
+
+.solape-swap-bg {
+  min-height: 775px;
+  background: url(/solape_images/ape-bg.svg) 150px -8px no-repeat;
+  margin-bottom: 80px;
+}
+
+.bg-th-bkg-2.p-6 {
+  background: rgb(28, 34, 34);
+  max-width: 424px;
+  border-radius: 8px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 0px 30px 5px;
+  color: rgb(255, 255, 255);
+}
+
+.bg-th-bkg-2.p-6::before {
+  display: block;
+  content: "Swap";
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+nav.solape {
+  background: linear-gradient(100.61deg, #090b0b, #1c2222);
+}
+
+nav.solape a {
+  color: hsla(0, 0%, 100%, .85);
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: normal;
+}
+
+nav.solape a.active {
+  font-size: 16px;
+  color: rgb(255, 230, 204);
+}
+
+.chart-interval-link {
+  color: #676767;
+  margin: 0 6px;
+  padding: 4px;
+  background: #1C2222;
+  border-radius: 4px;
+}
+
+.solape-swap-stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.solape-swap-stats h3 {
+  font-size: 20;
+  font-weight: 400;
+  color: #676767;
+  margin-top: 32px;
+  margin-bottom: 0.75em;
+}
+
+.chart-stats {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.chart-interval-link.active {
+  background: #FF810A;
+  color: #fff;
+}
+
+button.rounded-full {
+  /* width: 100%;
+  padding: 12px 12px;*/
+  font-size: 20px;
+  background: #4E5152;
+  /*font-weight: 500;
+  border-radius: 8px;
+  height: 58px; */
+}
+
+button.rounded-full.bg-transparent {
+  background: transparent;
+}
+
+.bg-th-bkg-3,
+.hover\:bg-th-bkg-3:hover {
+  background: #303739;
+}
+
+.border-th-bkg-3 {
+  border-color: #141818;
+}
+
+.xl\:col-start-2,
+.\32xl\:col-start-2 {
+  grid-column-start: 1 !important;
+}
+
+.xl\:col-span-10,
+.\32xl\:col-start-2 {
+  grid-column: span 12 / span 12 !important;
+}
+
+#connect-wallet-tip {
+  height: auto;
+}
+
+#connect-wallet-tip button {
+  padding: 5px 0;
+}
+
+#profile-menu-tip button {
+  /* height: auto; */
+}
+
+.token-window-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px 20px;
+  max-height: 70vh;
+  overflow: scroll;
+}
+
+.token-list-item {
+  background: #262C2C;
+  border-radius: 8px;
+  padding: 8px 6px;
+  display: flex;
+  margin: 0 7px 7px 0;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.token-list-item:hover {
+  background: var(--primary);
+}
+
+.token-list-item img {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+
+.solape-swap-bg .rounded-lg input[type=number],
+.solape-swap-bg .rounded-lg input#amount {
+  border: none;
+  background-color: #141617;
+}
+
+.solape-swap-bg .rounded-lg .my-4.flex.justify-center svg {
+  background-color: #303739;
+}
+
+.solape-swap-bg .rounded-lg .space-y-2.px-3 button.flex.h-7.w-7 {
+  background: #303739;
+}
+
+.solape-swap-bg .rounded-lg .rounded-md.border.border-th-bkg-4 {
+  background: #191E1F;
+}
+
+.solape-swap-bg .rounded-lg .rounded-md.border.border-th-bkg-4 button.rounded-full.bg-th-bkg-button {
+  background: linear-gradient(100.61deg, #FF810A 0%, #FFAB5C 100%);
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  width: auto;
+  padding: 16px;
+  height: auto;
+}
+
+.solape-swap-bg .rounded-lg .mr-2.text-xs.font-normal.text-th-fgd-3 {
+  color: #C5C7C7;
+}
+
+.solape-swap-bg .rounded-lg .swap-info-wrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 15px;
+  margin: 0px -15px -10px;
+}
+
+.solape-swap-bg .rounded-lg .swap-info-wrapper>div {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.jupiter-swap-terms {
+  padding: 12px;
+  background: #242D2D;
+  border-radius: 8px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  line-height: 15px;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jupiter-swap-terms a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+}
+
+.jupiter-swap-terms img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+.solape__token-select {
+  background: rgb(28, 34, 34);
+}
+
+@media (min-width: 1280px) {
+  .xl\:col-start-2 {
+    grid-column-start: 1;
+  }
+
+  .xl\:col-span-10 {
+    grid-column: span 12 / span 12;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:rounded-lg {
+    border-radius: 1rem;
+  }
+}

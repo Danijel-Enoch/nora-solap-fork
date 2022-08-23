@@ -1,0 +1,79 @@
+{
+  "name": "react-nice-dates",
+  "version": "3.1.0",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "unpkg": "build/index.umd.js",
+  "author": "Hernán Sartorio",
+  "license": "MIT",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernansartorio/react-nice-dates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hernansartorio/react-nice-dates/issues"
+  },
+  "homepage": "https://github.com/hernansartorio/react-nice-dates#readme",
+  "files": [
+    "build",
+    "src/style.scss",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "start": "parcel website/index.html -d tmp",
+    "build": "rollup -c && sass src/style.scss build/style.css --no-source-map && postcss build/style.css --use autoprefixer -o build/style.css",
+    "build:website": "rm -rf build-website/* && parcel build website/index.html -d build-website --experimental-scope-hoisting --no-content-hash && cp website/CNAME build-website/CNAME",
+    "deploy": "gh-pages -d build-website",
+    "lint": "eslint --cache --format codeframe src test website",
+    "release": "yarn run build && np",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "peerDependencies": {
+    "date-fns": "^2.0.0",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@testing-library/dom": "^6.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/date-fns": "^2.6.0",
+    "autoprefixer": "^9.7.3",
+    "date-fns": "^2.9.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^24.9.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-prerender": "^1.4.1",
+    "postcss-cli": "^7.1.0",
+    "prism-react-renderer": "^1.0.2",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-test-renderer": "^16.12.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "sass": "^1.25.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  }
+}
