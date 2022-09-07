@@ -427,8 +427,8 @@ export default function Profile() {
                     <div className="pb-0.5 text-th-fgd-3">
                       {t('profile:total-value')}
                     </div>
-                    <div className="text-2xl font-bold text-th-fgd-1 md:text-3xl">
-                      {formatUsdValue(totalValue)}
+                    <div className="text-sm font-bold text-th-fgd-1 md:text-sm">
+                      {t('-')}
                     </div>
                   </>
                 ) : (
@@ -439,10 +439,10 @@ export default function Profile() {
                 {accountsStatsLoaded ? (
                   <>
                     <div className="pb-0.5 text-th-fgd-3">
-                      {t('profile:total-pnl')}
+                      {t('Total Trades')}
                     </div>
                     <div className="text-2xl font-bold text-th-fgd-1 md:text-3xl">
-                      {formatUsdValue(totalPnl)}
+                      {t('-')}
                     </div>
                   </>
                 ) : (

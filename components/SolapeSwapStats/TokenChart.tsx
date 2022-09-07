@@ -35,7 +35,7 @@ export default function TokenChart({ token }: { token: any }) {
            }
         </div>
       </div>
-      <div>{/*<Grid item sm={12} md={2}>*/}
+      <div className={'pt-4 -ml-2'}>{/*<Grid item sm={12} md={2}>*/}
         <a className={`chart-interval-link ${sparkRange === 12 ? 'active' : ''}`} onClick={() => setSparkRange(12)}>12h</a>
         <a className={`chart-interval-link ${sparkRange === 24 ? 'active' : ''}`} onClick={() => setSparkRange(24)}>1d</a>
         <a className={`chart-interval-link ${sparkRange === 168 ? 'active' : ''}`} onClick={() => setSparkRange(168)}>7d</a>

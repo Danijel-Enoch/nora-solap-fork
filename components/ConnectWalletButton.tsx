@@ -158,26 +158,6 @@ export const ConnectWalletButton: React.FC = () => {
                 <Menu.Items className="absolute right-0 z-20 mt-1 w-48 space-y-1.5 rounded-md bg-th-bkg-2 px-4 py-2.5">
                   <Menu.Item>
                     <button
-                      className="flex w-full flex-row items-center rounded-none py-0.5 font-normal hover:cursor-pointer hover:text-th-primary focus:outline-none"
-                      onClick={() => router.push('/profile')}
-                    >
-                      <UserCircleIcon className="h-4 w-4" />
-                      <div className="pl-2 text-left">
-                        {t('Profile:Profile')}
-                      </div>
-                    </button>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <button
-                      className="flex w-full flex-row items-center rounded-none py-0.5 font-normal hover:cursor-pointer hover:text-th-primary focus:outline-none"
-                      onClick={() => setShowAccountsModal(true)}
-                    >
-                      <CurrencyDollarIcon className="h-4 w-4" />
-                      <div className="pl-2 text-left">{t('accounts')}</div>
-                    </button>
-                        </Menu.Item>
-                  <Menu.Item>
-                    <button
                       className="flex w-full flex-row items-center rounded-none py-0.5 font-normal hover:cursor-pointer focus:outline-none md:hover:text-th-primary"
                       onClick={handleDisconnect}
                     >

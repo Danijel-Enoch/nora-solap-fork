@@ -57,9 +57,9 @@ export default function Swap() {
           <div style={{ paddingLeft: "10px", paddingTop: "40px" }}>
             <JupiterForm useSolapeStats={true} />
           </div>
-          <div className="flex flex-col-2 -mt-24 md:items-start">
+          <div className="flex flex-col-2 -mt-16 md:items-start md:-mt-48">
             <a
-            className="flex whitespace-nowrap text-xs -mt-20 ml-3 text-th-fgd-2"
+            className="flex whitespace-nowrap text-xs -mt-28 ml-3 text-th-fgd-2"
             href="https://jup.ag/swap/USDC-SOLAPE"
             target="blank"
             rel="noopener noreferrer"

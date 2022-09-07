@@ -110,26 +110,6 @@ const SettingsModal = ({ isOpen, onClose }) => {
         <div className="border-b border-th-bkg-4">
           <button
             className="default-transition flex w-full items-center justify-between rounded-none border-t border-th-bkg-4 py-3 font-normal text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
-            onClick={() => setSettingsView('Default Market')}
-          >
-            <span>{t('default-market')}</span>
-            <div className="flex items-center text-xs text-th-fgd-3">
-              {defaultMarket.name}
-              <ChevronRightIcon className="ml-1 h-5 w-5 text-th-fgd-1" />
-            </div>
-          </button>
-          <button
-            className="default-transition flex w-full items-center justify-between rounded-none border-t border-th-bkg-4 py-3 font-normal text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
-            onClick={() => setSettingsView('Theme')}
-          >
-            <span>{t('theme')}</span>
-            <div className="flex items-center text-xs text-th-fgd-3">
-              {theme}
-              <ChevronRightIcon className="ml-1 h-5 w-5 text-th-fgd-1" />
-            </div>
-          </button>
-          <button
-            className="default-transition flex w-full items-center justify-between rounded-none border-t border-th-bkg-4 py-3 font-normal text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
             onClick={() => setSettingsView('Language')}
           >
             <span>{t('language')}</span>
@@ -150,21 +130,6 @@ const SettingsModal = ({ isOpen, onClose }) => {
               <ChevronRightIcon className="ml-1 h-5 w-5 text-th-fgd-1" />
             </div>
           </button>
-          <div className="flex items-center justify-between border-t border-th-bkg-4 py-3 text-th-fgd-1">
-            <span>{t('orderbook-animation')}</span>
-            <Switch
-              checked={showOrderbookFlash}
-              onChange={(checked) => setShowOrderbookFlash(checked)}
-            />
-          </div>
-
-          <div className="flex items-center justify-between border-t border-th-bkg-4 py-3 text-th-fgd-1">
-            <span>{t('default-spot-margin')}</span>
-            <Switch
-              checked={defaultSpotMargin}
-              onChange={(checked) => setDefaultSpotMargin(checked)}
-            />
-          </div>
         </div>
       ) : null}
       <SettingsContent

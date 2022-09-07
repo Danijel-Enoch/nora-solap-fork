@@ -206,10 +206,6 @@ button {
   text-align: center;
 }
 
-nav.solape {
-  background: linear-gradient(100.61deg, #090b0b 0%, #1c2222 100%);
-}
-
 nav.solape a {
   color: hsla(0, 0%, 100%, .85);
   font-weight: normal;
@@ -244,6 +240,19 @@ height: 30px;
 font-family:Inter;
 font-size: 8px
 
+}
+
+.solape-swap-stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.solape-swap-stats h3 {
+  font-size: 20;
+  font-weight: 400;
+  color: #676767;
+  margin-top: 32px;
+  margin-bottom: 0.75em;
 }
 
 /* Chart */

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+export {/*import Link from 'next/link'
 import useLocalStorageState from 'hooks/useLocalStorageState'
 import { DEFAULT_MARKET_KEY, initialMarket } from './SettingsModal'
 import { TradeIcon, TrophyIcon } from './icons'
@@ -119,7 +119,7 @@ const SideNav = ({ collapsed }) => {
             icon={<CashIcon className="h-5 w-5" />}
             title={t('borrow')}
             pagePath="/borrow"
-    />*/}
+    />
           <MenuItem
             active={pathname === '/leaderboard'}
             collapsed={collapsed}
@@ -133,7 +133,7 @@ const SideNav = ({ collapsed }) => {
             icon={<BtcMonoIcon className="h-5 w-5" />}
             title={t('stats')}
             pagePath="/stats"
-  />*/}
+  />
           <ExpandableMenuItem
             collapsed={collapsed}
             icon={<DotsHorizontalIcon className="h-5 w-5" />}
@@ -146,7 +146,7 @@ const SideNav = ({ collapsed }) => {
               title={t('referrals')}
               pagePath="/referral"
               hideIconBg
-    />*/}
+    />
             <MenuItem
               active={pathname === '/risk-calculator'}
               collapsed={false}
@@ -433,3 +433,4 @@ const ExpandableMenuItem = ({
     </Disclosure>
   )
 }
+*/}
