@@ -1,162 +1,75 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import useMangoStore, { serumProgramId } from '../stores/useMangoStore'
-import {
-  getMarketByBaseSymbolAndKind,
-  getMarketIndexBySymbol,
-} from '@blockworks-foundation/mango-client'
-import TradePageGrid from '../components/TradePageGrid'
-import useLocalStorageState from '../hooks/useLocalStorageState'
-import AlphaModal, { ALPHA_MODAL_KEY } from '../components/AlphaModal'
+import { JupiterProvider } from '@jup-ag/react-hook'
+import { useEffect } from 'react'
+import useMangoStore from '../stores/useMangoStore'
+import PageBodyContainer from '../components/PageBodyContainer'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { actionsSelector, marketConfigSelector } from '../stores/selectors'
-import { PublicKey } from '@solana/web3.js'
+import { actionsSelector, connectionSelector } from '../stores/selectors'
+import JupiterForm from '../components/JupiterForm'
+import { zeroKey } from '@blockworks-foundation/mango-client'
+import { useWallet } from '@solana/wallet-adapter-react'
+import GlobeIcon from '@heroicons/react/outline/GlobeIcon'
 import dayjs from 'dayjs'
-import { tokenPrecision } from 'utils'
-import SerumCompModal, { SEEN_SERUM_COMP_KEY } from 'components/SerumCompModal'
-import AccountIntro from 'components/AccountIntro'
+import useLocalStorageState from 'hooks/useLocalStorageState'
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, [
-        'common',
-        'delegate',
-        'tv-chart',
-        'alerts',
-        'share-modal',
-        'profile',
-      ])),
+      ...(await serverSideTranslations(locale, ['common', 'delegate', 'swap', 'profile'])),
       // Will be passed to the page component as props
     },
   }
 }
 
-const PerpMarket: React.FC = () => {
-  const [alphaAccepted] = useLocalStorageState(ALPHA_MODAL_KEY, false)
-  const [seenSerumCompInfo, setSeenSerumCompInfo] = useLocalStorageState(
-    SEEN_SERUM_COMP_KEY,
-    false
-  )
-
-  const setMangoStore = useMangoStore((s) => s.set)
-  const marketConfig = useMangoStore(marketConfigSelector)
+export default function Swap() {
+  const connection = useMangoStore(connectionSelector)
+  const { connected, publicKey, wallet } = useWallet()
   const actions = useMangoStore(actionsSelector)
-  const router = useRouter()
   const [savedLanguage] = useLocalStorageState('language', '')
-  const { pubkey } = router.query
 
   useEffect(() => {
     dayjs.locale(savedLanguage == 'zh_tw' ? 'zh-tw' : savedLanguage)
   })
 
   useEffect(() => {
-    async function loadUnownedMangoAccount() {
-      if (!pubkey) return
-      try {
-        const mangoGroup = useMangoStore.getState().selectedMangoGroup.current
-        const unownedMangoAccountPubkey = new PublicKey(pubkey)
-        const mangoClient = useMangoStore.getState().connection.client
-        if (mangoGroup) {
-          const unOwnedMangoAccount = await mangoClient.getMangoAccount(
-            unownedMangoAccountPubkey,
-            serumProgramId
-          )
-
-          setMangoStore((state) => {
-            state.selectedMangoAccount.current = unOwnedMangoAccount
-            state.selectedMangoAccount.initialLoad = false
-          })
-          actions.fetchTradeHistory()
-          actions.reloadOrders()
-          // setResetOnLeave(true)
-        }
-      } catch (error) {
-        router.push('/account')
-      }
+    if (wallet && connected) {
+      actions.fetchWalletTokens(wallet)
     }
+  }, [connected, actions])
 
-    if (pubkey) {
-      loadUnownedMangoAccount()
-    }
-  }, [pubkey])
+  if (!connection) return null
 
-  useEffect(() => {
-    const name = decodeURIComponent(router.asPath).split('name=')[1]
-    const mangoGroup = useMangoStore.getState().selectedMangoGroup.current
-    const groupConfig = useMangoStore.getState().selectedMangoGroup.config
-
-    let marketQueryParam, marketBaseSymbol, marketType, newMarket, marketIndex
-    if (name && groupConfig) {
-      marketQueryParam = name.toString().split(/-|\//)
-      marketBaseSymbol = marketQueryParam[0]
-      marketType = marketQueryParam[1]?.includes('PERP') ? 'perp' : 'spot'
-
-      newMarket = getMarketByBaseSymbolAndKind(
-        groupConfig,
-        marketBaseSymbol.toUpperCase(),
-        marketType
-      )
-      marketIndex = getMarketIndexBySymbol(
-        groupConfig,
-        marketBaseSymbol.toUpperCase()
-      )
-
-      if (!newMarket?.baseSymbol) {
-        router.push('/')
-        return
-      }
-    }
-
-    if (newMarket?.name === marketConfig?.name) return
-
-    if (name && mangoGroup) {
-      const mangoCache = useMangoStore.getState().selectedMangoGroup.cache
-      setMangoStore((state) => {
-        state.selectedMarket.kind = marketType
-        if (newMarket.name !== marketConfig.name) {
-          state.selectedMarket.config = newMarket
-          state.tradeForm.price = mangoCache
-            ? parseFloat(
-                mangoGroup.getPrice(marketIndex, mangoCache).toFixed(2)
-              )
-            : ''
-          if (state.tradeForm.quoteSize) {
-            state.tradeForm.baseSize = Number(
-              (
-                state.tradeForm.quoteSize / Number(state.tradeForm.price)
-              ).toFixed(tokenPrecision[newMarket.baseSymbol])
-            )
-          }
-        }
-      })
-    } else if (name && marketConfig) {
-      // if mangoGroup hasn't loaded yet, set the marketConfig to the query param if different
-      if (newMarket.name !== marketConfig.name) {
-        setMangoStore((state) => {
-          state.selectedMarket.kind = marketType
-          state.selectedMarket.config = newMarket
-        })
-      }
-    }
-  }, [router, marketConfig])
+  const userPublicKey =
+    publicKey && !zeroKey.equals(publicKey) ? publicKey : undefined
 
   return (
-    <>
-      <TradePageGrid />
-      {!alphaAccepted && (
-        <AlphaModal isOpen={!alphaAccepted} onClose={() => {}} />
-      )}
-      {!seenSerumCompInfo && alphaAccepted ? (
-        <SerumCompModal
-          isOpen={!seenSerumCompInfo && alphaAccepted}
-          onClose={() => setSeenSerumCompInfo(true)}
-        />
-      ) : null}
+    <JupiterProvider
+      connection={connection}
+      cluster="mainnet-beta"
+      userPublicKey={connected ? userPublicKey : undefined}
+    >
+      <div className={`bg-th-bkg-1 text-th-fgd-1 transition-all`} style={{
+        minHeight: "775px",
+        background: 'url(/solape_images/ape-bg.svg) 150px -56px no-repeat',
+        marginBottom: 80,
+      }}>
 
-      <AccountIntro />
-    </>
+        <PageBodyContainer>
+          <div style={{ paddingLeft: "10px", paddingTop: "40px" }}>
+            <JupiterForm useSolapeStats={true} />
+          </div>
+          <div className="flex flex-col-2 -mt-16 md:items-start md:-mt-48">
+            <a
+            className="flex whitespace-nowrap text-xs -mt-28 ml-3 text-th-fgd-2"
+            href="https://jup.ag/swap/USDC-SOLAPE"
+            target="blank"
+            rel="noopener noreferrer"
+            >
+             <GlobeIcon className="mr-1 h-4 w-4 text-th-fgd-4" />
+            Powered by Jupiter
+          </a>
+            </div>
+        </PageBodyContainer>
+      </div>
+    </JupiterProvider>
   )
 }
-
-export default PerpMarket

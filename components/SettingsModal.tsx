@@ -55,7 +55,6 @@ export const initialMarket = {
   base: 'SOL',
   kind: 'spot' as MarketKind,
   name: 'SOL/USDC',
-  path: '/?name=SOL-USDC',
 }
 
 const SettingsModal = ({ isOpen, onClose }) => {
