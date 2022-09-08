@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
         )}
         <div className="w-full overflow-hidden">
           <GlobalNotification />
-          <div className="flex h-16 items-center justify-between border-b border-th-bkg-1 solapenav px-6">
+          <div className="flex h-16 items-center justify-between border-b border-th-bkg-1 solapenav px-6 lg:w-full xl:w-full">
               <img
                     className={`absolute w-auto h-9`}
                     src="/assets/solape.svg"
