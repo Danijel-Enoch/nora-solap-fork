@@ -20,7 +20,6 @@ import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
 import Tooltip from './Tooltip'
 import MenuItem from './MenuItem'
-import Footer from './Footer'
 
 const Layout = ({ children }) => {
   const { t } = useTranslation(['common', 'delegate'])
