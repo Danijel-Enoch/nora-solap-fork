@@ -364,9 +364,9 @@ const JupiterForm = ({ useSolapeStats = false }) => {
 
   return (
     <div className="grid grid-cols-12 lg:space-x-4">
-      <div className="col-span-12 xl:col-span-10 xl:col-start-2 ">
+      <div className="col-span-12">
         <div className="flex flex-col md:flex-row md:space-x-6">
-          <div className="w-full md:w-1/2  lg:w-1/3">
+          <div className="w-full md:w-1/2  lg:w-1/2">
             <div className="relative">
               {connected &&
               walletTokensWithInfos.length &&
