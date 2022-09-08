@@ -1,4 +1,4 @@
-import { useState } from 'react'
+export {/* import { useState } from 'react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import MenuItem from './MenuItem'
 
@@ -14,7 +14,7 @@ const Footer = () => {
                   src="/assets/solape.svg"
                   alt="next"
                 />
-                          <p>A serum-based Solana DEX built by apes, for other apes.</p>
+          <p>A serum-based Solana DEX built by apes, for other apes.</p>
           <p>APES. TOGETHER. STRONG.</p>
               </div>
             </div>
@@ -32,3 +32,4 @@ const Footer = () => {
 }
 
 export default Footer
+*/}

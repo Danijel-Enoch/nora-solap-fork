@@ -118,7 +118,6 @@ const Layout = ({ children }) => {
           isOpen={showSettingsModal}
         />
       ) : null}
-      <Footer />
     </div>
   
   )
