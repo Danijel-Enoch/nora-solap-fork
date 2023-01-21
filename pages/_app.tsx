@@ -138,7 +138,7 @@ const PageTitle = () => {
 
   return (
     <Head>
-      <title>{marketTitleString}Solape DEX</title>
+      <title>{marketTitleString}Nora DEX</title>
     </Head>
   )
 }
@@ -160,9 +160,9 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Solape DEX</title>
+        <title>Nora DEX</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="Solape DEX" />
+        <meta property="og:title" content="Nora DEX" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
@@ -183,7 +183,7 @@ function App({ Component, pageProps }) {
         <meta name="twitter:title" content="Solape DEX" />
         <meta
           name="twitter:description"
-          content="Solape - Serum-based Solana DEX built by Apes, for Apes. Trade SOL and SPL tokens with cheap fees and securely."
+          content="Nora - Serum-based Solana DEX built by Apes, for Apes. Trade SOL and SPL tokens with cheap fees and securely."
         />
         <meta
           name="twitter:image"

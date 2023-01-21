@@ -6,13 +6,13 @@ body {
 
 .solape__connect-btn {
   background: transparent;
-  border: 2px solid #ff810a;
+  border: 2px solid #a50aff;
   color: hsla(0, 0%, 100%, .85);
   font-size: 16px;
 }
 
 .solape__connect-btn:hover {
-  color: #ff810a;
+  color: #a50aff;
 }
 
 .solape__connect-btn span {
@@ -22,7 +22,7 @@ body {
 
 .solape__wallet-select-btn {
   background: transparent;
-  border: 2px solid #ff810a;
+  border: 2px solid #a50aff;
   color: #fff;
   border-left: none;
 }
@@ -96,7 +96,7 @@ nav.solape a.active {
 }
 
 .chart-interval-link.active {
-  background: #FF810A;
+  background: #a50aff;
   color: #fff;
 }
 
@@ -196,7 +196,7 @@ button.rounded-full.bg-transparent {
 }
 
 .solape-swap-bg .rounded-lg .rounded-md.border.border-th-bkg-4 button.rounded-full.bg-th-bkg-button {
-  background: linear-gradient(100.61deg, #FF810A 0%, #FFAB5C 100%);
+  background: linear-gradient(100.61deg, #a50aff 0%, #c46bf7 100%);
   border: none;
   color: #fff;
   font-size: 12px;

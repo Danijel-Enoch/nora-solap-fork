@@ -19,8 +19,8 @@ module.exports = {
       colors: {
         'light-theme': {
           orange: {
-            DEFAULT: '#FF810A',
-            dark: '#F58700',
+            DEFAULT: '#a50aff',
+            dark: '#a50aff',
           },
           red: { DEFAULT: '#CC2929', dark: '#CC2929', muted: '#eba9a9' },
           green: { DEFAULT: '#5EBF4D', dark: '#5EBF4D', muted: '#bfe5b8' },
@@ -36,12 +36,12 @@ module.exports = {
         },
         'dark-theme': {
           yellow: {
-            DEFAULT: '#F2C94C',
-            dark: '#E4AF11',
+            DEFAULT: '#a50adc',
+            dark: '#a50bad',
           },
           red: { DEFAULT: '#CC2929', dark: '#AA2222', muted: '#571e20' },
           green: { DEFAULT: '#5EBF4D', dark: '#4BA53B', muted: '#365D31' },
-          orange: { DEFAULT: '#FF810A' },
+          orange: { DEFAULT: '#a50aff' },
           'bkg-1': '#101012',
           'bkg-2': '#1B1B1F',
           'bkg-3': '#27272B',
@@ -54,8 +54,8 @@ module.exports = {
         },
         'solape-theme': {
           orange: {
-            DEFAULT: '#FF810A',
-            dark: '#F58700',
+            DEFAULT: '#a50aff',
+            dark: '#a50afd',
           },
           red: { DEFAULT: '#DE0269', dark: '#A2024C', muted: '#9B0149', bright: '#FD499D' },
           green: { DEFAULT: '#0AD171', dark: '#08AF5F',  muted: '#067D43', bright: '#29F592' },
@@ -67,8 +67,8 @@ module.exports = {
           'fgd-2': '#C8C8C8',
           'fgd-3': '#B3B3B3',
           'fgd-4': '#878787',
-          'fgd-5': '#FFCB99',
-          'bkg-button': '#E06C00',
+          'fgd-5': '#a50aaa',
+          'bkg-button': '#a50afa',
           'bkg-button-2': '#4E5152',
 
         },

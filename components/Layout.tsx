@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
 
 
   return (
-    <div className={`flex-grow bg-th-bkg-1 text-th-fgd-1 transition-all`}>
+    <div className={`flex-grow transition-all bg-th-bkg-1 text-th-fgd-1`}>
       <div className="flex">
         {isMobile ? (
           <div className="fixed bottom-0 left-0 z-20 w-full md:hidden">
@@ -64,9 +64,9 @@ const Layout = ({ children }) => {
               </div>
             </div>
         )}
-        <div className="w-full overflow-hidden">
+        <div className="overflow-hidden w-full">
           <GlobalNotification />
-          <div className="flex h-16 items-center justify-between border-b border-th-bkg-1 solapenav px-6 lg:w-full xl:w-full">
+          <div className="flex justify-between items-center px-6 h-16 border-b border-th-bkg-1 solapenav lg:w-full xl:w-full">
               <img
                     className={`absolute w-auto h-9`}
                     src="/assets/solape.svg"
@@ -78,12 +78,12 @@ const Layout = ({ children }) => {
                 <MenuItem href={"/"}>
                   <span style={{ color: 'rgb(255, 230, 204)' }}>Swap</span>
                 </MenuItem>
-                <MenuItem href="https://dex.solape.io/#/market">
+                <MenuItem href="#">
                   Trade
                 </MenuItem>
-                <MenuItem href="https://dex.solape.io/#/markets">Markets</MenuItem>
-                <MenuItem href="https://dex.solape.io/#/about">About</MenuItem>
-                <MenuItem href="https://dex.solape.io/#/help">Help</MenuItem>
+                <MenuItem href="#">Markets</MenuItem>
+                <MenuItem href="#">About</MenuItem>
+                <MenuItem href="#">Help</MenuItem>
               </div>
             <div className="flex items-center space-x-4">
               {!isMobile && connected && !initialLoad ? (
@@ -91,10 +91,10 @@ const Layout = ({ children }) => {
                 </div>
               ) : null}
               <IconButton
-                className="h-8 w-8 flex ml-44"
+                className="flex ml-44 w-8 h-8"
                 onClick={() => setShowSettingsModal(true)}
               >
-                <CogIcon className="h-5 w-5 flex" />
+                <CogIcon className="flex w-5 h-5" />
               </IconButton>
               <ConnectWalletButton />
             </div>

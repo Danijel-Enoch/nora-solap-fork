@@ -1,4 +1,4 @@
-export {/* import { PublicKey } from '@solana/web3.js';
+import { PublicKey } from '@solana/web3.js';
 import Markets from '../config/markets.json';
 import TokenMints from '../config/token-mints.json';
 
@@ -25,5 +25,3 @@ export const MARKETS: Array<{
     deprecated: market.deprecated,
   };
 });
-
-*/}

@@ -95,10 +95,10 @@ const SettingsModal = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       {settingsView !== '' ? (
         <LinkButton
-          className="absolute left-2 top-3 flex items-center"
+          className="flex absolute left-2 top-3 items-center"
           onClick={() => setSettingsView('')}
         >
-          <ChevronLeftIcon className="h-5 w-5" />
+          <ChevronLeftIcon className="w-5 h-5" />
           <span>{t('back')}</span>
         </LinkButton>
       ) : null}
@@ -108,25 +108,25 @@ const SettingsModal = ({ isOpen, onClose }) => {
       {!settingsView ? (
         <div className="border-b border-th-bkg-4">
           <button
-            className="default-transition flex w-full items-center justify-between rounded-none border-t border-th-bkg-4 py-3 font-normal text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
+            className="flex justify-between items-center py-3 w-full font-normal rounded-none border-t default-transition border-th-bkg-4 text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
             onClick={() => setSettingsView('Language')}
           >
             <span>{t('language')}</span>
             {savedLanguageName ? (
               <div className="flex items-center text-xs text-th-fgd-3">
                 {t(savedLanguageName)}
-                <ChevronRightIcon className="ml-1 h-5 w-5 text-th-fgd-1" />
+                <ChevronRightIcon className="ml-1 w-5 h-5 text-th-fgd-1" />
               </div>
             ) : null}
           </button>
           <button
-            className="default-transition flex w-full items-center justify-between rounded-none border-t border-th-bkg-4 py-3 font-normal text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
+            className="flex justify-between items-center py-3 w-full font-normal rounded-none border-t default-transition border-th-bkg-4 text-th-fgd-1 focus:outline-none md:hover:text-th-primary"
             onClick={() => setSettingsView('RPC Endpoint')}
           >
             <span>{t('rpc-endpoint')}</span>
             <div className="flex items-center text-xs text-th-fgd-3">
               {rpcEndpoint?.label}
-              <ChevronRightIcon className="ml-1 h-5 w-5 text-th-fgd-1" />
+              <ChevronRightIcon className="ml-1 w-5 h-5 text-th-fgd-1" />
             </div>
           </button>
         </div>
@@ -200,14 +200,14 @@ const DefaultMarketSettings = ({ setSettingsView }) => {
       >
         {allMarkets.map((market) => (
           <Select.Option key={market.name} value={market.name}>
-            <div className="flex w-full items-center justify-between">
+            <div className="flex justify-between items-center w-full">
               {market.name}
             </div>
           </Select.Option>
         ))}
       </Select>
       <Button onClick={() => setSettingsView('')} className="mt-6 w-full">
-        <div className={`flex items-center justify-center`}>{t('save')}</div>
+        <div className={`flex justify-center items-center`}>{t('save')}</div>
       </Button>
     </div>
   )
@@ -260,7 +260,7 @@ const RpcEndpointSettings = ({ setSettingsView }) => {
         onClick={() => handleSetEndpointUrl(rpcEndpointUrl)}
         className="mt-6 w-full"
       >
-        <div className={`flex items-center justify-center`}>{t('save')}</div>
+        <div className={`flex justify-center items-center`}>{t('save')}</div>
       </Button>
     </div>
   )
@@ -279,7 +279,7 @@ const ThemeSettings = ({ setSettingsView }) => {
         values={THEMES}
       />
       <Button onClick={() => setSettingsView('')} className="mt-6 w-full">
-        <div className={`flex items-center justify-center`}>{t('save')}</div>
+        <div className={`flex justify-center items-center`}>{t('save')}</div>
       </Button>
     </>
   )
@@ -307,7 +307,7 @@ const LanguageSettings = () => {
         names={LANGS.map((val) => t(val.name))}
       />
       <Button onClick={() => handleLangChange()} className="mt-6 w-full">
-        <div className={`flex items-center justify-center`}>{t('save')}</div>
+        <div className={`flex justify-center items-center`}>{t('save')}</div>
       </Button>
     </>
   )

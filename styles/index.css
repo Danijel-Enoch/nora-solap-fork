@@ -72,7 +72,7 @@
 /* Base */
 
 body {
-  @apply font-body text-sm tracking-wider;
+  @apply text-sm tracking-wider font-body;
 }
 
 h1 {
@@ -131,13 +131,13 @@ button {
 
 .solape__connect-btn {
   background: transparent;
-  border: 2px solid #ff810a;
+  border: 2px solid #a50aff;
   color: hsla(0, 0%, 100%, .85);
   font-size: 16px;
 }
 
 .solape__connect-btn:hover {
-  color: #ff810a;
+  color: #a50aff;
 }
 
 .solape__connect-btn span {
@@ -147,7 +147,7 @@ button {
 
 .solape__wallet-select-btn {
   background: transparent;
-  border: 2px solid #ff810a;
+  border: 2px solid #a50aff;
   color: #fff;
   border-left: none;
   margin: 0em;
@@ -182,7 +182,7 @@ button {
 }
 
 .chart-interval-link.active {
-  background: #FF810A;
+  background: #a50aff;
   color: #fff;
 }
 
@@ -565,11 +565,11 @@ body::-webkit-scrollbar-corner {
 }
 
 .introjs-tooltipbuttons {
-  @apply rounded-b-md border-th-bkg-4 font-bold focus:outline-none;
+  @apply font-bold rounded-b-md border-th-bkg-4 focus:outline-none;
 }
 
 .introjs-nextbutton {
-  @apply pointer-events-none flex h-4 items-center rounded-full border-th-bkg-4 bg-th-bkg-4 text-sm text-th-fgd-1 opacity-60;
+  @apply flex items-center h-4 text-sm rounded-full opacity-60 pointer-events-none border-th-bkg-4 bg-th-bkg-4 text-th-fgd-1;
   text-shadow: none;
 }
 
@@ -582,7 +582,7 @@ body::-webkit-scrollbar-corner {
 }
 
 .introjs-button:focus {
-  @apply border-th-bkg-4 bg-th-bkg-4 text-th-fgd-1 shadow-none;
+  @apply shadow-none border-th-bkg-4 bg-th-bkg-4 text-th-fgd-1;
 }
 
 .introjs-hidden {
@@ -594,11 +594,11 @@ body::-webkit-scrollbar-corner {
 }
 
 .intro-tooltip h4 {
-  @apply mb-2 font-body text-lg font-bold;
+  @apply mb-2 text-lg font-bold font-body;
 }
 
 .intro-tooltip p {
-  @apply mb-1 font-body text-sm text-th-fgd-3;
+  @apply mb-1 text-sm font-body text-th-fgd-3;
 }
 
 .introjs-bullets ul li a {
